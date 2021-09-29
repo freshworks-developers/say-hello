@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <script
+    src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://static.freshdev.io/fdk/2.0/assets/freshdesk.css" />
+  <script type="module"
+    src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.esm.js">
+    </script>
+  <script nomodule
+    src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.js">
+    </script>
+</head>
+
+<body>
+  <div class="fw-widget-wrapper">
+    <span class="text-with-margin" id="agentName"></span>
+    <fw-button class="text-with-margin" id="btnSayHello" color="primary"> Say
+      Hello
+      👋 </fw-button>
+    <p>to Freshservice!</p>
+    <fw-label class="text-with-margin" id="newTicketBanner" value=""
+      color="blue">
+    </fw-label>
+  </div>
+</body>
+<script src="scripts/app.js"></script>
+
+</html>

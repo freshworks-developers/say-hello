@@ -1,0 +1,8 @@
+.DS_Store
+**/.fdk/**
+**/coverage/**
+**/.report.json
+**/.vscode/**
+.idea
+**/dist/**
+log/**
