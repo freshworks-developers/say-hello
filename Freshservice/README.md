@@ -20,6 +20,6 @@ Upon clicking the button `Say Hello👋` , a ticket is created with a successful
 2. [Request API](https://developers.freshservice.com/docs/request-method/) - to make API call for ticket creation.
 3. [Interface API](https://developers.freshservice.com/docs/interface-methods/) - to show the notification.
 
-### Freshdesk APIs used
+### Freshservice APIs used
 
 1. [Create ticket API](https://api.freshservice.com/v2/#create_ticket) - to create a ticket on request.
