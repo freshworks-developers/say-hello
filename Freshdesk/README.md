@@ -1,10 +1,13 @@
 # Say Hello app
 
-This app guides for a start working on Freshdesk
+Let’s Say Hello👋 to Freshdesk.
+This app lets you say `Hello` to Freshdesk and responds you with a ticket.
 
 ## Functionality
 
-* Upon clicking a button, a ticket is created on Freshdesk with a successful notification.
+Upon clicking the button `Say Hello👋` , a ticket is created with a successful notification.
+
+![ App flow Image](screenshots/app-flow-freshdesk.png "Text to show on mouseover")
 
 ### Steps to run app
 
@@ -14,9 +17,9 @@ This app guides for a start working on Freshdesk
 ### Platform features used
 
 1. [Data API](https://developer.freshdesk.com/v2/docs/data-api) - to fetch the logged in user.
-2. [Request API](https://developer.freshdesk.com/v2/docs/request-api) - to make API call to Freshdesk to create ticket.
+2. [Request API](https://developer.freshdesk.com/v2/docs/request-api) - to make API call for ticket creation.
 3. [Interface API](https://developer.freshdesk.com/v2/docs/interface-api/#ticketshownotify) - to show notification to the user.
 
 ### Freshdesk APIs used
 
-1. [Create ticket API](https://developer.freshdesk.com/api/#create_ticket) - To create a ticket for calls if necessary
+1. [Create ticket API](https://developer.freshdesk.com/api/#create_ticket) - to create a ticket on request.

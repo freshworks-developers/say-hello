@@ -5,7 +5,9 @@ This app lets you say `Hello` to Freshservice and responds you with a ticket.
 
 ## Functionality
 
-Upon clicking the button, a ticket is created with a successful notification.
+Upon clicking the button `Say Hello👋` , a ticket is created with a successful notification.
+
+![ App flow Image](screenshots/app-flow-freshservice.png "Text to show on mouseover")
 
 ### Steps to run app
 

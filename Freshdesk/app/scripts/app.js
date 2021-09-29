@@ -17,9 +17,9 @@ function showNotify(type, message) {
 function createTicket() {
   const ticketDetails = {
     email: 'puppycat@email.com',
-    subject: 'Hello',
+    subject: `Hey ${agent} 👋, First HELLO always inspires!`,
     priority: 1,
-    description: "Hey ${agent} 👋, First HELLO always inspires!",
+    description: "👋, Weirdest Hello World ever 👀!!",
     status: 2
   }
   client.iparams.get("freshdesk_subdomain").then(
@@ -53,7 +53,6 @@ function onAppActivate() {
   client.data.get('loggedInUser').then(function (data) {
     window.agent = data.loggedInUser.contact.name;
     document.getElementById('agentName').textContent = `Hello ${agent},`;
-    document.getElementById('btnSayHello').removeEventListener('fwClick', createTicket);
     document.getElementById('btnSayHello').addEventListener('fwClick', createTicket);
   }, function (error) {
     console.error('Error: Failed to fetch loggedInUser details');
@@ -68,7 +67,7 @@ document.onreadystatechange = function () {
     var onInit = app.initialized();
 
     onInit.then(getClient).catch(function (error) {
-      console.error('Error: Failed to initialise the app');
+      console.error('Error: Failed to initialize the app');
       console.error(error);
     });
 
