@@ -16,10 +16,10 @@ Upon clicking the button `Say Hello👋` , a ticket is created with a successful
 
 ### Platform features used
 
-1. [Data API](https://developer.freshdesk.com/v2/docs/data-api) - to fetch the logged in user.
-2. [Request API](https://developer.freshdesk.com/v2/docs/request-api) - to make API call for ticket creation.
-3. [Interface API](https://developer.freshdesk.com/v2/docs/interface-api/#ticketshownotify) - to show notification to the user.
+1. [Data Methods](https://developer.freshdesk.com/v2/docs/data-methods/) - to fetch the logged in user.
+2. [Request Methods](https://developer.freshdesk.com/v2/docs/request-method/) - to make API request for ticket creation.
+3. [Interface Methods](https://developer.freshdesk.com/v2/docs/interface-methods/) - to show notification to the user.
 
 ### Freshdesk APIs used
 
-1. [Create ticket API](https://developer.freshdesk.com/api/#create_ticket) - to create a ticket on request.
+1. [Create Ticket API](https://developer.freshdesk.com/api/#create_ticket) - to create a ticket on Freshdesk with Request Method.
