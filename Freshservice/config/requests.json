@@ -1,0 +1,13 @@
+{
+  "createTicket": {
+    "schema": {
+      "method": "POST",
+      "host": "<%= iparam.freshservice_subdomain %>.freshservice.com",
+      "path": "/api/v2/tickets",
+      "headers": {
+        "Authorization": "Basic <%= encode(iparam.freshservice_api_key) %>",
+        "Content-Type": "application/json"
+      }
+    }
+  }
+}
