@@ -2,12 +2,15 @@
   "createTicket": {
     "schema": {
       "method": "POST",
-      "host": "<%= iparam.freshservice_subdomain %>.freshservice.com",
+      "host": "<%= iparam.freshservice_domain %>",
       "path": "/api/v2/tickets",
       "headers": {
-        "Authorization": "Basic <%= encode(iparam.freshservice_api_key) %>",
+        "Authorization": "Bearer <%= access_token %>",
         "Content-Type": "application/json"
       }
+    },
+    "options": {
+      "isOAuth": true
     }
   }
 }
