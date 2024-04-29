@@ -1,21 +1,8 @@
 {
-  "freshservice_subdomain": {
-    "display_name": "Freshservice subdomain",
-    "description": "Please enter your Freshservice subdomain.",
-    "type": "domain",
-    "type_attributes": {
-      "product": "freshservice"
-    },
+  "freshservice_domain": {
+    "display_name": "Your Freshservice domain",
+    "description": "Please enter your Freshservice domain. For example: subdomain.freshservice.com",
+    "type": "text",
     "required": true
-  },
-  "freshservice_api_key": {
-    "display_name": "Freshservice API key",
-    "description": "Please enter your Freshservice API key",
-    "type": "api_key",
-    "secure": true,
-    "required": true,
-    "type_attributes": {
-      "product": "freshservice"
-    }
   }
 }
