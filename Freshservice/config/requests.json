@@ -10,7 +10,7 @@
       }
     },
     "options": {
-      "isOAuth": true
+      "oauth": "freshservice"
     }
   }
 }

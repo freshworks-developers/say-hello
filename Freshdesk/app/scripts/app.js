@@ -27,7 +27,6 @@ function showBanner(text) {
  * @param {String} agentName - The name of the logged in agent
  */
 async function createTicket(agentName) {
-  console.log('got logged in user')
   const ticketDetails = JSON.stringify({
     email: 'puppycat@email.com',
     subject: 'Hello',

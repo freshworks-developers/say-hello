@@ -1,20 +1,22 @@
 {
-  "platform-version": "2.3",
-  "product": {
-    "freshservice": {
+  "platform-version": "3.0",
+  "modules": {
+    "common": {
+      "requests": {
+        "createTicket": {}
+      }
+    },
+    "service_ticket": {
       "location": {
         "ticket_sidebar": {
           "url": "index.html",
           "icon": "styles/images/wave.png"
         }
-      },
-      "requests": {
-        "createTicket": {}
       }
     }
   },
   "engines": {
     "node": "18.18.2",
-    "fdk": "9.1.0"
+    "fdk": "9.1.1"
   }
 }
