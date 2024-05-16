@@ -21,6 +21,17 @@
           "required": true
         }
       }
+    },
+    "github": {
+      "display_name": "GitHub",
+      "client_id": "YOUR_CLIENT_ID",
+      "client_secret": "YOUR_CLIENT_SECRET",
+      "authorize_url": "https://github.com/login/oauth/authorize",
+      "token_url": "https://github.com/login/oauth/access_token",
+      "options": {
+        "scope": "public_repo"
+      },
+      "token_type": "account"
     }
   }
 }

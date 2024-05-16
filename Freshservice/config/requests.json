@@ -12,5 +12,22 @@
     "options": {
       "oauth": "freshservice"
     }
+  },
+  "createGitHubIssue": {
+    "schema": {
+      "method": "POST",
+      "host": "api.github.com",
+      "path": "/repos/<%= iparam.github_repo_name %>/issues",
+      "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Authorization":"Bearer <%= access_token %>",
+        "User-Agent": "Freshworks App"
+      }
+    },
+    "options": {
+      "oauth": "github"
+    }
   }
 }

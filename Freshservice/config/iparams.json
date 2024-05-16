@@ -4,5 +4,11 @@
     "description": "Please enter your Freshservice domain. For example: subdomain.freshservice.com",
     "type": "text",
     "required": true
+  },
+  "github_repo_name": {
+    "display_name": "Your GitHub repository name",
+    "description": "Please enter your GitHub repository name",
+    "type": "text",
+    "required": true
   }
 }

@@ -5,6 +5,7 @@
  * @param {String} message - content to be shown in the notification
  **/
 async function sayHello() {
+  console.log('sayHello btn click');
   try {
     // Try creating a ticket
     await createTicket();
@@ -18,6 +19,67 @@ async function sayHello() {
     console.error("Error: Failed to create a ticket");
     console.error(error);
     showNotification("danger", "Failed to create a ticket.");
+  }
+}
+
+async function helloGitHub() {
+    try {
+    await createGitHubIssue();
+    console.info("Successfully created issue in GitHub");
+    showNotification("success", "Successfully created an issue to say hello to GitHub");
+  } catch (error) {
+    console.error("Error: Failed to create a GitHub issue");
+    console.error(error);
+    showNotification("danger", "Failed to create a GitHub issue.");
+  }
+}
+
+async function createGitHubIssue() {
+  // var options = {
+	// 	headers: {
+	// 		"Authorization": 'token <%= access_token %>',
+	// 		"User-Agent": 'FreshHuddle Sample User Agent'
+	// 	},
+	// 	body: JSON.stringify({
+	// 		"title": ticketData.ticket.subject,
+	// 		"body": ticketData.ticket.description_text
+	// 	}),
+	// 	isOAuth: true
+	// };
+	// client.iparams.get('github_repo').then(function (iparam) {
+	// 	client.request.post(`https://api.github.com/repos/${iparam.github_repo}/issues`, options)
+	// 		.then(function (data) {
+	// 			// TODO : Add try catch block
+	// 			console.log('ticketData', ticketData);
+	// 			response = JSON.parse(data.response);
+	// 			var ticketObj = { ticketID: ticketData.ticket.id, issueID: response.id, issueNumber: response.number };
+	// 			console.log('ticket obj', ticketObj);
+
+	// 			setData(ticketObj);
+	// 		})
+	// 		.catch(function (error) {
+	// 			console.error("error", error);
+	// 		})
+	// })
+
+
+  const issueDetails = JSON.stringify({
+			"title": "Multi OAuth demo issue",
+			"body": "More details go here"
+		});
+
+  try {
+    const response = await client.request.invokeTemplate("createGitHubIssue", {
+      context: {
+        github_repo: "multi-oauth-demo"
+      },
+      body: JSON.stringify(issueDetails)
+    });
+    console.log(response);
+    console.log(JSON.parse(response.response));
+  } catch (error) {
+    console.error('Error: Failed to create GitHub issue');
+    console.error(error);
   }
 }
 
@@ -39,6 +101,7 @@ async function createTicket() {
     body: JSON.stringify(ticketDetails)
   });
 }
+
 
 /**
  * Shows a notification using Freshworks API
@@ -75,9 +138,12 @@ function onAppActivate() {
       document.getElementById("agentName").textContent = `Hello ${agent},`;
 
       // Attach 'sayHello' function to a button click event
-      document
-        .getElementById("btnSayHello")
-        .addEventListener("fwClick", sayHello);
+      const button = document.getElementById("btnSayHello")
+      console.log(button);
+      const result = button.addEventListener("fwClick", sayHello);
+      console.log(result)
+      document.getElementById("btnSayHello").addEventListener("fwClick", sayHello);
+      document.getElementById("btnHelloGitHub").addEventListener("fwClick", helloGitHub);
     },
     function (error) {
       // If failed to fetch user details
