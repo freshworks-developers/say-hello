@@ -5,10 +5,17 @@
     "type": "text",
     "required": true
   },
-  "github_repo_name": {
-    "display_name": "Your GitHub repository name",
-    "description": "Please enter your GitHub repository name",
+  "github_username": {
+    "display_name": "GitHub Username",
+    "description": "Enter your GitHub username",
     "type": "text",
     "required": true
+  },
+  "github_repository": {
+    "display_name": "GitHub Repository",
+    "description": "Enter the GitHub repository to create issues in",
+    "type": "text",
+    "required": true,
+    "secure": false
   }
 }

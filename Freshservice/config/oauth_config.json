@@ -29,7 +29,7 @@
       "authorize_url": "https://github.com/login/oauth/authorize",
       "token_url": "https://github.com/login/oauth/access_token",
       "options": {
-        "scope": "public_repo"
+        "scope": "repo"
       },
       "token_type": "account"
     }

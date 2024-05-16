@@ -3,7 +3,8 @@
   "modules": {
     "common": {
       "requests": {
-        "createTicket": {}
+        "createTicket": {},
+        "createGitHubIssue": {}
       }
     },
     "service_ticket": {

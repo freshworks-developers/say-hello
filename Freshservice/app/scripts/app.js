@@ -34,18 +34,15 @@ async function helloGitHub() {
   }
 }
 
-async function createGitHubIssue() {
-  const issueDetails = JSON.stringify({
-			"title": "Multi OAuth demo issue",
-			"body": "More details go here"
-		});
-
+async function createGitHubIssue() {  
+  console.log('creating an issue')
   try {
-    const response = await client.request.invokeTemplate("createGitHubIssue", {
-      context: {
-        github_repo: "multi-oauth-demo"
-      },
-      body: JSON.stringify(issueDetails)
+    const response =   await client.request.invokeTemplate('createGitHubIssue', {
+          context: {},
+          body: JSON.stringify({
+            "title": "Multi OAuth demo issue",
+            "body": "I'm having a problem with this."
+          })
     });
     console.log(response);
     console.log(JSON.parse(response.response));
@@ -102,6 +99,7 @@ function showBanner(value) {
  * Handles the app activation event
  */
 function onAppActivate() {
+  console.log("onAppActivate");
   // Fetch logged-in user details
   client.data.get("loggedInUser").then(
     function (data) {
@@ -110,12 +108,7 @@ function onAppActivate() {
       document.getElementById("agentName").textContent = `Hello ${agent},`;
 
       // Attach 'sayHello' function to a button click event
-      const button = document.getElementById("btnSayHello")
-      console.log(button);
-      const result = button.addEventListener("fwClick", sayHello);
-      console.log(result)
-      document.getElementById("btnSayHello").addEventListener("fwClick", sayHello);
-      document.getElementById("btnHelloGitHub").addEventListener("fwClick", helloGitHub);
+      
     },
     function (error) {
       // If failed to fetch user details
@@ -123,6 +116,9 @@ function onAppActivate() {
       console.error(error);
     }
   );
+
+  document.getElementById("btnSayHello").addEventListener("fwClick", sayHello);
+  document.getElementById("btnHelloGitHub").addEventListener("click", helloGitHub);
 }
 
 // Wait for document to be interactive and then render the app
@@ -133,6 +129,7 @@ document.onreadystatechange = function () {
    * Initializes the app and sets up event listeners
    */
   function renderApp() {
+    console.log("renderApp");
     // Initialize Freshworks app
     var onInit = app.initialized();
 
@@ -147,6 +144,7 @@ document.onreadystatechange = function () {
      * @param {Object} _client - Freshworks client instance
      */
     function getClient(_client) {
+      console.log('on init')
       window.client = _client;
 
       // Attach 'onAppActivate' function to the Freshworks app activation lifecycle event

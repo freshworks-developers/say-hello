@@ -13,21 +13,22 @@
       "oauth": "freshservice"
     }
   },
-  "createGitHubIssue": {
-    "schema": {
-      "method": "POST",
-      "host": "api.github.com",
-      "path": "/repos/<%= iparam.github_repo_name %>/issues",
-      "headers": {
-        "Content-Type": "application/json",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        "Authorization":"Bearer <%= access_token %>",
-        "User-Agent": "Freshworks App"
+    "createGitHubIssue": {
+      "schema": {
+        "method": "POST",
+        "host": "api.github.com",
+        "path": "/repos/<%= iparam.github_username %>/<%= iparam.github_repository %>/issues",
+        "headers": {
+          "Authorization": "token <%= access_token %>",
+          "Content-Type": "application/json",
+          "Accept": "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "GitHub-Freshservice app"
+        },
+        "query": {}
+      },
+      "options": {
+        "oauth": "github"
       }
-    },
-    "options": {
-      "oauth": "github"
     }
-  }
 }
