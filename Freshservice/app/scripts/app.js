@@ -35,34 +35,6 @@ async function helloGitHub() {
 }
 
 async function createGitHubIssue() {
-  // var options = {
-	// 	headers: {
-	// 		"Authorization": 'token <%= access_token %>',
-	// 		"User-Agent": 'FreshHuddle Sample User Agent'
-	// 	},
-	// 	body: JSON.stringify({
-	// 		"title": ticketData.ticket.subject,
-	// 		"body": ticketData.ticket.description_text
-	// 	}),
-	// 	isOAuth: true
-	// };
-	// client.iparams.get('github_repo').then(function (iparam) {
-	// 	client.request.post(`https://api.github.com/repos/${iparam.github_repo}/issues`, options)
-	// 		.then(function (data) {
-	// 			// TODO : Add try catch block
-	// 			console.log('ticketData', ticketData);
-	// 			response = JSON.parse(data.response);
-	// 			var ticketObj = { ticketID: ticketData.ticket.id, issueID: response.id, issueNumber: response.number };
-	// 			console.log('ticket obj', ticketObj);
-
-	// 			setData(ticketObj);
-	// 		})
-	// 		.catch(function (error) {
-	// 			console.error("error", error);
-	// 		})
-	// })
-
-
   const issueDetails = JSON.stringify({
 			"title": "Multi OAuth demo issue",
 			"body": "More details go here"
