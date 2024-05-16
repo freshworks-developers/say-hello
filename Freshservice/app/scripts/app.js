@@ -7,23 +7,22 @@
 async function sayHello() {
   console.log('sayHello btn click');
   try {
-    // Try creating a ticket
     await createTicket();
-
-    // If successful...
     console.info("Successfully created ticket in Freshservice");
     showNotification("success", "Successfully created a ticket to say hello");
     showBanner("Freshservice talks in tickets, check for new ticket.");
   } catch (error) {
-    // If failed...
     console.error("Error: Failed to create a ticket");
     console.error(error);
     showNotification("danger", "Failed to create a ticket.");
   }
 }
 
+/**
+ * Say hello to GitHub by creating an issue in the configured repository
+ */
 async function helloGitHub() {
-    try {
+  try {
     await createGitHubIssue();
     console.info("Successfully created issue in GitHub");
     showNotification("success", "Successfully created an issue to say hello to GitHub");
@@ -34,18 +33,18 @@ async function helloGitHub() {
   }
 }
 
-async function createGitHubIssue() {  
-  console.log('creating an issue')
+/**
+ * Create a GitHub issue by making an API request with OAuth
+ */
+async function createGitHubIssue() {
   try {
-    const response =   await client.request.invokeTemplate('createGitHubIssue', {
-          context: {},
-          body: JSON.stringify({
-            "title": "Multi OAuth demo issue",
-            "body": "I'm having a problem with this."
-          })
+    await client.request.invokeTemplate('createGitHubIssue', {
+      context: {},
+      body: JSON.stringify({
+        "title": "Multi OAuth demo issue",
+        "body": "I'm having a problem with this."
+      })
     });
-    console.log(response);
-    console.log(JSON.parse(response.response));
   } catch (error) {
     console.error('Error: Failed to create GitHub issue');
     console.error(error);
@@ -121,33 +120,23 @@ function onAppActivate() {
   document.getElementById("btnHelloGitHub").addEventListener("click", helloGitHub);
 }
 
-// Wait for document to be interactive and then render the app
 document.onreadystatechange = function () {
   if (document.readyState === "interactive") renderApp();
 
-  /**
-   * Initializes the app and sets up event listeners
-   */
+
   function renderApp() {
     console.log("renderApp");
-    // Initialize Freshworks app
     var onInit = app.initialized();
 
-    // Get client instance on initialization
     onInit.then(getClient).catch(function (error) {
       console.error("Error: Failed to initialize the app");
       console.error(error);
     });
 
-    /**
-     * Sets the client instance and attaches event listeners
-     * @param {Object} _client - Freshworks client instance
-     */
     function getClient(_client) {
       console.log('on init')
       window.client = _client;
 
-      // Attach 'onAppActivate' function to the Freshworks app activation lifecycle event
       client.events.on("app.activated", onAppActivate);
     }
   }
