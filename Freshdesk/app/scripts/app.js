@@ -78,7 +78,7 @@ function onAppActivate() {
 }
 
 document.onreadystatechange = function () {
-  if (document.readyState === 'interactive') renderApp();
+  if (document.readyState === 'complete') renderApp();
 
   function renderApp() {
     var onInit = app.initialized();
