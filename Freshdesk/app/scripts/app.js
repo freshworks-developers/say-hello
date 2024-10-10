@@ -65,7 +65,9 @@ async function sayHello(agentName) {
 function onAppActivate() {
   client.data.get("loggedInUser").then(function (data) {
     document.getElementById("agentName").textContent = `Hello ${data.loggedInUser.contact.name},`;
-    document.getElementById('btnSayHello').removeEventListener('fwClick');
+    document.getElementById('btnSayHello').removeEventListener('fwClick',function () {
+      sayHello(data.loggedInUser.contact.name);
+    });
     document.getElementById("btnSayHello").addEventListener("fwClick", function () {
       sayHello(data.loggedInUser.contact.name);
     });
@@ -78,7 +80,7 @@ function onAppActivate() {
 }
 
 document.onreadystatechange = function () {
-  if (document.readyState === 'interactive') renderApp();
+  if (document.readyState === 'complete') renderApp();
 
   function renderApp() {
     var onInit = app.initialized();

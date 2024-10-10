@@ -1,15 +1,17 @@
 {
   "platform-version": "3.0",
   "modules": {
+    "common": {
+      "requests": {
+        "createTicket": {}
+      }
+    },
     "support_ticket": {
       "location": {
         "ticket_sidebar": {
           "url": "index.html",
           "icon": "styles/images/wave.png"
         }
-      },
-      "requests": {
-        "createTicket": {}
       }
     }
   },
