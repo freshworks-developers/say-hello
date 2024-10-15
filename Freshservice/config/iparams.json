@@ -1,8 +1,0 @@
-{
-  "freshservice_domain": {
-    "display_name": "Your Freshservice domain",
-    "description": "Please enter your Freshservice domain. For example: subdomain.freshservice.com",
-    "type": "text",
-    "required": true
-  }
-}

@@ -22,11 +22,11 @@ function showBanner(text) {
 
 
 /**
- * Create a ticket to say hello
+ * Create a Freshdesk ticket to say hello
  *
  * @param {String} agentName - The name of the logged in agent
  */
-async function createTicket(agentName) {
+async function createfdTicket(agentName) {
   const ticketDetails = JSON.stringify({
     email: 'puppycat@email.com',
     subject: 'Hello',
@@ -35,7 +35,31 @@ async function createTicket(agentName) {
     status: 2
   });
   // Send request
-  await client.request.invokeTemplate("createTicket", {
+  await client.request.invokeTemplate("createfdTicket", {
+    body: ticketDetails
+  });
+}
+
+/**
+ * Create a Freshservice ticket to say hello
+ *
+ * @param {String} agentName - The name of the logged in agent
+ */
+async function createfsTicket(agentName) {
+  const ticketDetails=JSON.stringify({
+      "description": "Details about the issue...",
+      "subject": "Support Needed for " + agentName,
+      "email": "tom@outerspace.com",
+      "priority": 1,
+      "status": 2,
+      "cc_emails": [
+        "ram@freshservice.com",
+        "diana@freshservice.com"
+      ],
+      "workspace_id": 2
+    });
+    // Send request
+  await client.request.invokeTemplate("createfsTicket", {
     body: ticketDetails
   });
 }
@@ -45,10 +69,16 @@ async function createTicket(agentName) {
  *
  * @param {String} agentName - The name of the logged in agent
  */
-async function sayHello(agentName) {
+async function sayHello(agentName, isFreshDesk) {
   try {
     // Try creating a ticket
-    await createTicket(agentName);
+    if(isFreshDesk){
+      await createfdTicket(agentName);
+    }
+    else{
+      await createfsTicket(agentName);
+    }
+    
 
     // If successful...
     console.info("Successfully created ticket in Freshdesk");
@@ -64,12 +94,16 @@ async function sayHello(agentName) {
 
 function onAppActivate() {
   client.data.get("loggedInUser").then(function (data) {
-    document.getElementById("agentName").textContent = `Hello ${data.loggedInUser.contact.name},`;
+    let isFreshDesk = data.loggedInUser.hasOwnProperty("availability");
+    let agentName = isFreshDesk ? data.loggedInUser.contact.name : data.loggedInUser.user.name; 
+    let productName = isFreshDesk ? "to FreshDesk" : "to Freshservice";
+    document.getElementById("agentName").textContent = `Hello ${agentName},`;
+    document.getElementById("fd-product").textContent = productName;
     document.getElementById('btnSayHello').removeEventListener('fwClick',function () {
-      sayHello(data.loggedInUser.contact.name);
+      sayHello(agentName, isFreshDesk);
     });
     document.getElementById("btnSayHello").addEventListener("fwClick", function () {
-      sayHello(data.loggedInUser.contact.name);
+      sayHello(agentName, isFreshDesk);
     });
   },
     function (error) {

@@ -3,10 +3,19 @@
   "modules": {
     "common": {
       "requests": {
-        "createTicket": {}
+        "createfdTicket": {},
+        "createfsTicket":{}
       }
     },
     "support_ticket": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "styles/images/wave.png"
+        }
+      }
+    },
+    "service_ticket": {
       "location": {
         "ticket_sidebar": {
           "url": "index.html",
