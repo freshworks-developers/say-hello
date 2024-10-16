@@ -1,7 +1,7 @@
 # Say Hello app
 
-Let’s Say Hello👋 to Freshdesk.
-This app lets you say `Hello` to Freshdesk and responds you with a ticket.
+Let’s Say Hello👋 to Freshdesk and Freshservice.
+This app lets you say `Hello` to Freshdesk/Freshservice and responds you with a ticket.
 
 ## Functionality
 
@@ -22,4 +22,5 @@ Upon clicking the button `Say Hello👋` , a ticket is created with a successful
 
 ### Freshdesk APIs used
 
-1. [Create Ticket API](https://developer.freshdesk.com/api/#create_ticket) - to create a ticket on Freshdesk with Request Method.
+1. [Create Ticket API - Freshdesk](https://developer.freshdesk.com/api/#create_ticket) - to create a ticket on Freshdesk with Request Method.
+2. [Create Ticket API - Freshservice](https://api.freshservice.com/#create_ticket) - to create a ticket on Freshservice with Request Method.

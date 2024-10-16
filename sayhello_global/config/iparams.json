@@ -1,0 +1,28 @@
+{
+  "freshdesk_subdomain": {
+    "display_name": "Freshdesk Subdomain",
+    "description": "Please enter your Freshdesk subdomain.",
+    "type": "text",
+    "required": true
+  },
+  "freshdesk_api_key": {
+    "display_name": "Freshdesk API key",
+    "description": "Please enter your Freshdesk API key",
+    "type": "text",
+    "secure": true,
+    "required": true
+  },
+  "freshservice_subdomain": {
+    "display_name": "Freshservice Subdomain",
+    "description": "Please enter your Freshservice subdomain.",
+    "type": "text",
+    "required": true
+  },
+  "freshservice_api_key": {
+    "display_name": "Freshservice API key",
+    "description": "Please enter your Freshservice API key",
+    "type": "text",
+    "secure": true,
+    "required": true
+  }
+}
