@@ -1,0 +1,38 @@
+{
+  "platform-version": "3.0",
+  "app": {
+    "tracking_id": "sayhello00000001",
+    "start_time": "2026-06-17T00:00:00.000Z"
+  },
+  "modules": {
+    "common": {
+      "requests": {
+        "createfdTicket": {},
+        "createfsTicket": {}
+      }
+    },
+    "support_ticket": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "styles/images/wave.png"
+        }
+      }
+    },
+    "service_ticket": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "styles/images/wave.png"
+        }
+      }
+    }
+  },
+  "engines": {
+    "node": "24.11.1",
+    "fdk": "10.1.2"
+  },
+  "scripts": {
+    "fdk-unit-test": "vitest run --coverage"
+  }
+}

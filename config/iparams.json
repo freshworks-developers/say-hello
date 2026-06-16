@@ -1,0 +1,28 @@
+{
+  "freshdesk_subdomain": {
+    "display_name": "Freshdesk Subdomain",
+    "description": "Your Freshdesk subdomain only (e.g. acme for acme.freshdesk.com). Required for Freshdesk testing.",
+    "type": "text",
+    "required": true
+  },
+  "freshdesk_api_key": {
+    "display_name": "Freshdesk API key",
+    "description": "Freshdesk agent API key from Profile Settings. Used to create hello tickets on Freshdesk.",
+    "type": "text",
+    "secure": true,
+    "required": true
+  },
+  "freshservice_subdomain": {
+    "display_name": "Freshservice Subdomain",
+    "description": "Your Freshservice subdomain only (e.g. acme for acme.freshservice.com). Required for Freshservice testing.",
+    "type": "text",
+    "required": true
+  },
+  "freshservice_api_key": {
+    "display_name": "Freshservice API key",
+    "description": "Freshservice agent API key from Profile Settings. Used to create hello tickets on Freshservice.",
+    "type": "text",
+    "secure": true,
+    "required": true
+  }
+}

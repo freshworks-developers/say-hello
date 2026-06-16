@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Say Hello</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="{{{appclient}}}"></script>
+  <script async type="module"
+    src="https://cdn.jsdelivr.net/npm/@freshworks/crayons@v4/dist/crayons/crayons.esm.js"></script>
+  <script async nomodule
+    src="https://cdn.jsdelivr.net/npm/@freshworks/crayons@v4/dist/crayons/crayons.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+  <div class="sidebar-card">
+    <div class="header">
+      <h4 class="title">Say Hello</h4>
+      <fw-label id="productBadge" color="blue" value="Loading..."></fw-label>
+    </div>
+
+    <p class="greeting" id="agentName">Loading agent details...</p>
+    <p class="hint" id="fd-product">Create a ticket to say hello to your helpdesk.</p>
+
+    <div class="actions">
+      <fw-button id="btnSayHello" color="primary" expand>Say Hello 👋</fw-button>
+    </div>
+
+    <fw-label id="newTicketBanner" class="banner" color="green" value=""></fw-label>
+    <p id="init-error" class="error" hidden></p>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
