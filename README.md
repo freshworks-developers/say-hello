@@ -1,4 +1,8 @@
-# Say Hello - Global App Starter
+<p align="center">
+  <img src="say-hello.png" alt="Say Hello — Freshdesk and Freshservice ticket sidebar sample app" width="100%" />
+</p>
+
+# Say Hello 👋
 
 A Freshworks Platform 3.0 sample app that greets the logged-in agent in the **ticket sidebar** on Freshdesk and Freshservice using **Data Methods**, **Request Methods**, and **Interface Methods**.
 
@@ -29,7 +33,7 @@ On `app.activated`, the app calls `client.data.get('loggedInUser')` for the agen
 
 ### 2. Request Methods — Create Ticket
 
-Two templates in `config/requests.json` create tickets through the Freshdesk and Freshservice APIs. Installation parameters supply subdomain and API key credentials for each product.
+Two templates in `config/requests.json` create tickets through the Freshdesk and Freshservice APIs. FDK injects the account domain via `current_host.endpoint_urls`; installation parameters supply only the agent API key for each product.
 
 ### 3. Interface Methods — User Feedback
 
@@ -92,8 +96,8 @@ fdk config set global_apps.enabled true
    fdk validate
   ```
 3. Configure installation parameters when prompted during install:
-  - Freshdesk subdomain and API key (for Freshdesk testing)
-  - Freshservice subdomain and API key (for Freshservice testing)
+  - Freshdesk API key (when testing on Freshdesk)
+  - Freshservice API key (when testing on Freshservice)
 4. Run the app locally:
   ```bash
    fdk run
