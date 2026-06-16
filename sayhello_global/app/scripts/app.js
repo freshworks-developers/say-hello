@@ -94,9 +94,9 @@ async function sayHello(agentName, isFreshDesk) {
 
 function onAppActivate() {
   client.data.get("loggedInUser").then(function (data) {
-    let isFreshDesk = data.loggedInUser.hasOwnProperty("availability");
-    let agentName = isFreshDesk ? data.loggedInUser.contact.name : data.loggedInUser.user.name; 
-    let productName = isFreshDesk ? "to FreshDesk" : "to Freshservice";
+    const isFreshDesk = Object.hasOwn(data.loggedInUser, "availability");
+    const agentName = isFreshDesk ? data.loggedInUser.contact.name : data.loggedInUser.user.name;
+    const productName = isFreshDesk ? "to FreshDesk" : "to Freshservice";
     document.getElementById("agentName").textContent = `Hello ${agentName},`;
     document.getElementById("fd-product").textContent = productName;
     document.getElementById('btnSayHello').removeEventListener('fwClick',function () {
@@ -117,7 +117,7 @@ document.onreadystatechange = function () {
   if (document.readyState === 'complete') renderApp();
 
   function renderApp() {
-    var onInit = app.initialized();
+    const onInit = app.initialized();
 
     onInit.then(function (_client) {
       window.client = _client;
